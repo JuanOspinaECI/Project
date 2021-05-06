@@ -3,13 +3,19 @@
 #include <iostream>
 #include <alarma.h>
 #include "base_local.h"
+#include <string>
 
 using namespace std;
 
-int main(int argc, char *argv[]){
+int main(int argc, char** argv){
+    string user1, pass1;
+    user1 = "jospina";//argv[1];
+    pass1 = "789123";//argv[2];
     DB_Local BASE("DATA1.db");
     BASE.AbrirDB();
-    if( BASE.ValidarPass("alxperez", "9876") ){
+    cout << user1 << endl;
+    cout << pass1 <<endl;
+    if( BASE.ValidarPass(user1, pass1) ){
         cout << "Ese password es correcto." << endl;
     }else{
         cout << "Ese password es erróneo." << endl;
@@ -20,6 +26,7 @@ int main(int argc, char *argv[]){
     QCoreApplication a(argc, argv);
     QTimer *temp_cont = new QTimer();
     Alarma al;
+    al.registro(user1);
     QObject::connect( temp_cont, SIGNAL(timeout()), &al, SLOT(llamado()) );
     temp_cont->setInterval( 100 );
     temp_cont->start();

@@ -1,0 +1,1 @@
+/usr/bin/g++    -rdynamic CMakeFiles/MET_CONSOLA.dir/main.cpp.o CMakeFiles/MET_CONSOLA.dir/sensor.cpp.o  -o MET_CONSOLA 

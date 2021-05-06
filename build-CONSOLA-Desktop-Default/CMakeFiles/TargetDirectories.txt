@@ -1,0 +1,3 @@
+/home/juancospina/PJ/Project/build-CONSOLA-Desktop-Default/CMakeFiles/rebuild_cache.dir
+/home/juancospina/PJ/Project/build-CONSOLA-Desktop-Default/CMakeFiles/MET_CONSOLA.dir
+/home/juancospina/PJ/Project/build-CONSOLA-Desktop-Default/CMakeFiles/edit_cache.dir

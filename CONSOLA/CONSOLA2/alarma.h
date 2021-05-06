@@ -10,14 +10,23 @@
 using namespace std;
 
 class Alarma : public QObject{
-    int                     _seg, _min, _hora;
-    GPS         		_gps, _prom_gps, _max_gps, _min_gps;
-    Temp_Hum    	_tem, _prom_tem, _max_tem, _min_tem;
+    int                     _seg = 0, _min = 0, _hora = 0, _hr, _minu, _itera;
+    GPS                     _gps, _prom_gps, _max_gps, _min_gps;
+    Temp_Hum                _tem, _prom_tem, _max_tem, _min_tem;
     Viento      			_viento, _prom_viento, _max_viento, _min_viento;
     Pre      				_preci, _prom_preci, _max_preci, _min_preci;
+    std::string _fecha;
+  //  int                      _hr, _min, _itera;
   Q_OBJECT
 
 public slots:
+    void registro(string user0){
+       ActualizarFechaFromSO();
+       DB_Local BASE("DATA1.db");
+       BASE.AbrirDB();
+       BASE.GuardarHist(user0, _hr, _minu, _fecha);
+       BASE.CerrarDB();
+    }
 
     void llamado(){
 //        std::cout << "Timer finalizado." << std::endl;
@@ -30,18 +39,27 @@ public slots:
                 if (_min == 60 ){
                     _min = 0;
                     ++_hora;
-                    if(_hora == 24) _hora = 0;
+                    if(_hora == 24) _hora = 0; ActualizarFechaFromSO();
                 }
             }
         }
+    void ActualizarFechaFromSO(){
+        time_t now = time(0);
+        tm *ltm = localtime(&now);
+        _hr = ltm->tm_hour;
+        _minu = ltm->tm_min;
+
+        std::stringstream fecha;
+        fecha << ltm->tm_mday << "/" << ltm->tm_mon + 1  << "/" << ltm->tm_year + 1900;
+        _fecha = fecha.str();
+    }
     void cada5Seg(){
         _gps.actualizar();
         _max_gps = _max_gps.maximo(_gps, _max_gps);
         _min_gps = _min_gps.maximo(_gps, _min_gps);
         _prom_gps =_prom_gps + _gps;
 
-         cout <<"promedio "<< _prom_gps.latitud()<<endl;
-         cout << _gps.latitud()<<endl;
+         cout <<_seg <<endl;
 
         _tem.actualizar();
         _max_tem = _max_tem.maximo(_tem, _max_tem);
@@ -119,7 +137,7 @@ public slots:
         _datos.preci = _prom_preci.precipitacion();
 
         BASE.GuardarDatoProm( _datos );
-
+        cout<< "hola"<< endl;
         _datos.lat = _max_gps.latitud();
         _datos.alt = _max_gps.altura();
         _datos.lon = _max_gps.longitud();
@@ -141,7 +159,7 @@ public slots:
         _datos.preci = _min_preci.precipitacion();
 
         BASE.GuardarDatoMin( _datos );
-
+        BASE.CerrarDB();
     /*     ui->txtLat->setText( QString::number( _prom_gps.latitud() ) );
         ui->txtLong->setText( QString::number( _prom_gps.longitud() ) );
         ui->txtAlt->setText( QString::number( _prom_gps.altura() ) );

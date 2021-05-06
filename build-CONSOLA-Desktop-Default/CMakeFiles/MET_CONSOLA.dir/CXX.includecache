@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/juancospina/PJ/Project/CONSOLA/main.cpp
+iostream
+-
+sensor.h
+/home/juancospina/PJ/Project/CONSOLA/sensor.h
+QMainWindow
+-
+QTimer
+-
+vector
+-
+
+/home/juancospina/PJ/Project/CONSOLA/sensor.cpp
+iostream
+-
+string
+-
+sstream
+-
+cmath
+-
+stdlib.h
+-
+sensor.h
+/home/juancospina/PJ/Project/CONSOLA/sensor.h
+
+/home/juancospina/PJ/Project/CONSOLA/sensor.h
+iostream
+-
+string
+-
+sstream
+-
+cmath
+-
+stdlib.h
+-
+

@@ -1,4 +1,5 @@
 QT -= gui
+QT += sql3
 
 CONFIG += c++11 console
 CONFIG -= app_bundle
@@ -15,8 +16,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += main.cpp \
-           sensor.cpp
+           sensor.cpp \
+    base_local.cpp
 
 HEADERS += \
     alarma.h \
-    Sensor.h
+    Sensor.h \
+    base_local.h
+
