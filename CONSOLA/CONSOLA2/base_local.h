@@ -21,9 +21,9 @@ public:
     DB_Local(string path);
     bool AbrirDB();
     bool CerrarDB();
-    bool GuardarDatoProm(Dato a);
-    bool GuardarDatoMax(Dato a);
-    bool GuardarDatoMin(Dato a);
+    bool GuardarDatoProm(Dato a, string fecha);
+    bool GuardarDatoMax(Dato a, string fecha);
+    bool GuardarDatoMin(Dato a, string fecha);
     bool ValidarPass(string username, string passwd);
     bool GuardarHist(string us, int hora, int min, string fecha);
 

@@ -111,11 +111,11 @@ bool DB_Local::CerrarDB(){
     return true;
 }
 
-bool DB_Local::GuardarDatoProm(Dato a){
+bool DB_Local::GuardarDatoProm(Dato a, string fecha){
    char *zErrMsg = nullptr;
    stringstream sql;
    sql << "INSERT INTO TBL_Datos_Prom (id_dato, Fecha, Temperatura, Humedad, Longitud, Latitud, Altura, Velocidad, Direccion, Precipitacion) VALUES (";
-   sql << rand() << ", 27/04/2021, " << a.temp << ", " << a.hum << ", " <<  a.lon << ", " << a.lat << ", " << a.alt;
+   sql << rand() << ", '" << fecha << "'," << a.temp << ", " << a.hum << ", " <<  a.lon << ", " << a.lat << ", " << a.alt;
    sql << ", " << a.vel << ", " << a.dir << ", " << a.preci << ");";
 
    int rc = sqlite3_exec(_db, sql.str().c_str(), 0, 0, &zErrMsg);
@@ -130,11 +130,11 @@ bool DB_Local::GuardarDatoProm(Dato a){
    return true;
 }
 
-bool DB_Local::GuardarDatoMax(Dato a){
+bool DB_Local::GuardarDatoMax(Dato a, string fecha){
    char *zErrMsg = nullptr;
    stringstream sql;
    sql << "INSERT INTO TBL_Datos_Max (id_dato, Fecha, Temperatura, Humedad, Longitud, Latitud, Altura, Velocidad, Direccion, Precipitacion) VALUES (";
-   sql << rand() << ", 27/04/2021, " << a.temp << ", " << a.hum << ", " <<  a.lon << ", " << a.lat << ", " << a.alt;
+   sql << rand() << ", '" << fecha << "'," << a.temp << ", " << a.hum << ", " <<  a.lon << ", " << a.lat << ", " << a.alt;
    sql << ", " << a.vel << ", " << a.dir << ", " << a.preci << ");";
 
    int rc = sqlite3_exec(_db, sql.str().c_str(), 0, 0, &zErrMsg);
@@ -148,11 +148,11 @@ bool DB_Local::GuardarDatoMax(Dato a){
    }
    return true;
 }
-bool DB_Local::GuardarDatoMin(Dato a){
+bool DB_Local::GuardarDatoMin(Dato a, string fecha){
    char *zErrMsg = nullptr;
    stringstream sql;
    sql << "INSERT INTO TBL_Datos_Min (id_dato, Fecha, Temperatura, Humedad, Longitud, Latitud, Altura, Velocidad, Direccion, Precipitacion) VALUES (";
-   sql << rand() << ", '27/04/2021', " << a.temp << ", " << a.hum << ", " <<  a.lon << ", " << a.lat << ", " << a.alt;
+   sql << rand() <<  ", '" << fecha << "'," << a.temp << ", " << a.hum << ", " <<  a.lon << ", " << a.lat << ", " << a.alt;
    sql << ", " << a.vel << ", " << a.dir << ", " << a.preci << ");";
 
    int rc = sqlite3_exec(_db, sql.str().c_str(), 0, 0, &zErrMsg);

@@ -16,7 +16,6 @@ class Alarma : public QObject{
     Viento      			_viento, _prom_viento, _max_viento, _min_viento;
     Pre      				_preci, _prom_preci, _max_preci, _min_preci;
     std::string _fecha;
-  //  int                      _hr, _min, _itera;
   Q_OBJECT
 
 public slots:
@@ -92,37 +91,6 @@ public slots:
         _prom_preci = _prom_preci/di;
 
 
-//        cout << "Latitud promedio: " << _prom_gps.latitud() << endl;
-//        cout << "Latitud maxima: " << _max_gps.latitud() << endl;
-//        cout << "Latitud minima: " << _min_gps.latitud() << endl;
-
-//        cout << "Longitud promedio: " << _prom_gps.longitud() << endl;
-//        cout << "Longitud maxima: " << _max_gps.longitud() << endl;
-//        cout << "Longitud minima: " << _min_gps.longitud() << endl;
-
-//        cout << "altura promedio: " << _prom_gps.altura() << endl;
-//        cout << "altura maxima: " << _max_gps.altura() << endl;
-//        cout << "altura minima: " << _min_gps.altura() << endl;
-
-//        cout << "temperatura promedio: " << _prom_tem.temperatura() << endl;
-//        cout << "temperatura maxima: " << _max_tem.temperatura() << endl;
-//        cout << "temperatura minima: " << _min_tem.temperatura() << endl;
-
-//        cout << "humedad promedio: " << _prom_tem.humedad() << endl;
-//        cout << "humedad maxima: " << _max_tem.humedad() << endl;
-//        cout << "humedad minima: " << _min_tem.humedad() << endl;
-
-//        cout << "velocidad promedio: " << _prom_viento.velocidad() << endl;
-//        cout << "velocidad maxima: " << _max_viento.velocidad() << endl;
-//        cout << "velocidad minima: " << _min_viento.velocidad() << endl;
-
-//        cout << "direccion promedio: " << _prom_viento.direccion() << endl;
-//        cout << "direccion maxima: " << _max_viento.direccion() << endl;
-//        cout << "direccion minima: " << _max_viento.direccion() << endl;
-
-//        cout << "Precipitacion promedio: " << _prom_preci.precipitacion() << endl;
-//        cout << "Precipitacion maxima: " << _max_preci.precipitacion() << endl;
-//        cout << "Precipitacion minima: " << _max_preci.precipitacion() << endl;
 
         DB_Local BASE("DATA1.db");
         Dato _datos;
@@ -136,7 +104,7 @@ public slots:
         _datos.dir = _prom_viento.direccion();
         _datos.preci = _prom_preci.precipitacion();
 
-        BASE.GuardarDatoProm( _datos );
+        BASE.GuardarDatoProm( _datos, _fecha );
         cout<< "hola"<< endl;
         _datos.lat = _max_gps.latitud();
         _datos.alt = _max_gps.altura();
@@ -147,7 +115,7 @@ public slots:
         _datos.dir = _max_viento.direccion();
         _datos.preci = _max_preci.precipitacion();
 
-        BASE.GuardarDatoMax( _datos );
+        BASE.GuardarDatoMax( _datos, _fecha );
 
         _datos.lat = _min_gps.latitud();
         _datos.alt = _min_gps.altura();
@@ -158,7 +126,7 @@ public slots:
         _datos.dir = _min_viento.direccion();
         _datos.preci = _min_preci.precipitacion();
 
-        BASE.GuardarDatoMin( _datos );
+        BASE.GuardarDatoMin( _datos, _fecha );
         BASE.CerrarDB();
     /*     ui->txtLat->setText( QString::number( _prom_gps.latitud() ) );
         ui->txtLong->setText( QString::number( _prom_gps.longitud() ) );
