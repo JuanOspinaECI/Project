@@ -8,7 +8,7 @@
 
 using namespace std;
 autenticacion::autenticacion(QWidget *parent) :
-    QWidget(parent),
+    QDialog(parent),
     ui(new Ui::autenticacion)
 {
     ui->setupUi(this);
@@ -38,14 +38,15 @@ void autenticacion::on_Ingresar_clicked()
     if( a.ValidarPass(user, passw) ){
         cout << "Ese password es correcto." << endl;
         _acc = 1;
-        //MainWindow w;
-        //w.hide();
-        //close();
+        a.CerrarDB();
+        close();
 
     }else{
         cout << "Ese password es erróneo." << endl;
+        a.CerrarDB();
     }
-    a.CerrarDB();
+
+
 }
 
 

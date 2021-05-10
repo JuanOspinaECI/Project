@@ -1,13 +1,13 @@
 #ifndef AUTENTICACION_H
 #define AUTENTICACION_H
 
-#include <QWidget>
+#include <QDialog>
 
 namespace Ui {
 class autenticacion;
 }
 
-class autenticacion : public QWidget
+class autenticacion : public QDialog
 {
     Q_OBJECT
 

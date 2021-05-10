@@ -11,6 +11,9 @@ int main(int argc, char *argv[])
     //f.show();
     //if(f._acc == 1){
     MainWindow w;
+    //w.show();
+    f.show();
+    f.exec();
     w.show();
     //}
 
