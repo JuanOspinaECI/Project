@@ -470,6 +470,7 @@ CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWi
 CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit
 CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow
 CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton
+CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QRadioButton
 CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QSpacerItem
 CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout
 CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget
@@ -496,6 +497,7 @@ CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWi
 CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlineedit.h
 CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h
 CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h
+CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qradiobutton.h
 CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h
 CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h
 CMakeFiles/Meteo.dir/autenticacion.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qslider.h
@@ -1031,6 +1033,7 @@ CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtW
 CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel
 CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit
 CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton
+CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QRadioButton
 CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QSpacerItem
 CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QVBoxLayout
 CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget
@@ -1056,6 +1059,7 @@ CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtW
 CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayoutitem.h
 CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlineedit.h
 CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h
+CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qradiobutton.h
 CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h
 CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qsizepolicy.h
 CMakeFiles/Meteo.dir/registrodialog.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qslider.h

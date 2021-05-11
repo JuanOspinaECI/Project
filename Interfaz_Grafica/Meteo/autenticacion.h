@@ -22,6 +22,8 @@ private slots:
 
     void on_Registrarse_clicked();
 
+    void on_show_pas_toggled(bool checked);
+
 private:
     Ui::autenticacion *ui;
 

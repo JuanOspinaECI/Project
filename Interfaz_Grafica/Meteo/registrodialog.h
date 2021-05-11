@@ -39,8 +39,9 @@ public slots:
 
 private slots:
     void on_cancelar_clicked();
-
     void on_registro_clicked();
+
+    void on_show_pass_toggled(bool checked);
 
 private:
     Ui::registroDialog *ui;

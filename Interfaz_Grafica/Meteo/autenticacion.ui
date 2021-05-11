@@ -34,7 +34,7 @@
       <x>0</x>
       <y>20</y>
       <width>301</width>
-      <height>225</height>
+      <height>233</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -93,7 +93,22 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="contras"/>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLineEdit" name="contras">
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="show_pas">
+         <property name="text">
+          <string>show password</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <widget class="QPushButton" name="Ingresar">

@@ -2320,6 +2320,10 @@ qmenubar.h
 qpushbutton.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QRadioButton
+qradiobutton.h
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qradiobutton.h
+
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QSpacerItem
 qlayoutitem.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayoutitem.h
@@ -2566,6 +2570,12 @@ QtWidgets/qtwidgetsglobal.h
 QtWidgets/qabstractbutton.h
 -
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qradiobutton.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qabstractbutton.h
+-
+
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qrubberband.h
 QtWidgets/qtwidgetsglobal.h
 -
@@ -2721,6 +2731,8 @@ QtWidgets/QLineEdit
 -
 QtWidgets/QPushButton
 -
+QtWidgets/QRadioButton
+-
 QtWidgets/QSpacerItem
 -
 QtWidgets/QVBoxLayout
@@ -2788,6 +2800,8 @@ QtWidgets/QLabel
 QtWidgets/QLineEdit
 -
 QtWidgets/QPushButton
+-
+QtWidgets/QRadioButton
 -
 QtWidgets/QSpacerItem
 -

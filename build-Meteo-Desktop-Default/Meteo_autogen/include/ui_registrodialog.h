@@ -20,6 +20,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -43,7 +44,9 @@ public:
     QLabel *label;
     QLineEdit *user;
     QLabel *label_2;
+    QHBoxLayout *horizontalLayout_4;
     QLineEdit *pass;
+    QRadioButton *show_pass;
     QLabel *label_4;
     QLineEdit *id;
     QVBoxLayout *verticalLayout_2;
@@ -81,7 +84,7 @@ public:
         groupBox->setGeometry(QRect(0, 0, 381, 441));
         verticalLayoutWidget = new QWidget(groupBox);
         verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(0, 20, 381, 413));
+        verticalLayoutWidget->setGeometry(QRect(0, 20, 381, 421));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -138,10 +141,21 @@ public:
 
         verticalLayout->addWidget(label_2);
 
+        horizontalLayout_4 = new QHBoxLayout();
+        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
         pass = new QLineEdit(verticalLayoutWidget);
         pass->setObjectName(QStringLiteral("pass"));
+        pass->setEchoMode(QLineEdit::Password);
 
-        verticalLayout->addWidget(pass);
+        horizontalLayout_4->addWidget(pass);
+
+        show_pass = new QRadioButton(verticalLayoutWidget);
+        show_pass->setObjectName(QStringLiteral("show_pass"));
+
+        horizontalLayout_4->addWidget(show_pass);
+
+
+        verticalLayout->addLayout(horizontalLayout_4);
 
         label_4 = new QLabel(verticalLayoutWidget);
         label_4->setObjectName(QStringLiteral("label_4"));
@@ -249,6 +263,7 @@ public:
         label_10->setText(QApplication::translate("registroDialog", "Last name:", Q_NULLPTR));
         label->setText(QApplication::translate("registroDialog", "User:", Q_NULLPTR));
         label_2->setText(QApplication::translate("registroDialog", "Password:", Q_NULLPTR));
+        show_pass->setText(QApplication::translate("registroDialog", "show password", Q_NULLPTR));
         label_4->setText(QApplication::translate("registroDialog", "ID:", Q_NULLPTR));
         label_5->setText(QApplication::translate("registroDialog", "Birthdate: ", Q_NULLPTR));
         label_7->setText(QApplication::translate("registroDialog", "           DD", Q_NULLPTR));

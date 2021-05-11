@@ -19,6 +19,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -38,7 +39,9 @@ public:
     QLabel *label_2;
     QLineEdit *usuario;
     QLabel *label_3;
+    QHBoxLayout *horizontalLayout_2;
     QLineEdit *contras;
+    QRadioButton *show_pas;
     QPushButton *Ingresar;
     QPushButton *Registrarse;
     QPushButton *salirr;
@@ -54,7 +57,7 @@ public:
         groupBox->setGeometry(QRect(0, 0, 301, 221));
         gridLayoutWidget = new QWidget(groupBox);
         gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(0, 20, 301, 225));
+        gridLayoutWidget->setGeometry(QRect(0, 20, 301, 233));
         verticalLayout = new QVBoxLayout(gridLayoutWidget);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -91,10 +94,21 @@ public:
 
         verticalLayout->addWidget(label_3);
 
+        horizontalLayout_2 = new QHBoxLayout();
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
         contras = new QLineEdit(gridLayoutWidget);
         contras->setObjectName(QStringLiteral("contras"));
+        contras->setEchoMode(QLineEdit::Password);
 
-        verticalLayout->addWidget(contras);
+        horizontalLayout_2->addWidget(contras);
+
+        show_pas = new QRadioButton(gridLayoutWidget);
+        show_pas->setObjectName(QStringLiteral("show_pas"));
+
+        horizontalLayout_2->addWidget(show_pas);
+
+
+        verticalLayout->addLayout(horizontalLayout_2);
 
         Ingresar = new QPushButton(gridLayoutWidget);
         Ingresar->setObjectName(QStringLiteral("Ingresar"));
@@ -124,6 +138,7 @@ public:
         label->setText(QApplication::translate("autenticacion", "ESTACION METEREOLIGA", Q_NULLPTR));
         label_2->setText(QApplication::translate("autenticacion", "User:", Q_NULLPTR));
         label_3->setText(QApplication::translate("autenticacion", "Password:", Q_NULLPTR));
+        show_pas->setText(QApplication::translate("autenticacion", "show password", Q_NULLPTR));
         Ingresar->setText(QApplication::translate("autenticacion", "Ingresar", Q_NULLPTR));
         Registrarse->setText(QApplication::translate("autenticacion", "Registrarse", Q_NULLPTR));
         salirr->setText(QApplication::translate("autenticacion", "Salir", Q_NULLPTR));

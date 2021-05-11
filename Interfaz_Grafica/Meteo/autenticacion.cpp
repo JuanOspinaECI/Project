@@ -58,3 +58,14 @@ void autenticacion::on_Registrarse_clicked()
     reg.show();
     reg.exec();
 }
+
+void autenticacion::on_show_pas_toggled(bool checked)
+{
+    if(checked){
+        ui->contras->setEchoMode(QLineEdit::Normal);
+    }
+
+    else{
+        ui->contras->setEchoMode(QLineEdit::Password);
+    }
+}

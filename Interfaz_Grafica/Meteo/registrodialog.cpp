@@ -57,3 +57,16 @@ void registroDialog::on_registro_clicked()
     }
 
 }
+
+
+
+void registroDialog::on_show_pass_toggled(bool checked)
+{
+    if(checked){
+        ui->pass->setEchoMode(QLineEdit::Normal);
+    }
+
+    else{
+        ui->pass->setEchoMode(QLineEdit::Password);
+    }
+}
