@@ -26,7 +26,7 @@ bool DB_Local::AbrirDB(){
 
     // Validar que todas las tablas existan correctamente
     /* Create SQL statement */
-    sqlstr << "CREATE TABLE IF NOT EXISTS TBL_Datos_Prom (id_dato INTEGER PRIMARY KEY NOT NULL ," \
+    sqlstr << "CREATE TABLE IF NOT EXISTS TBL_Datos_Prom (" \
        "Fecha TEXT NOT NULL, Temperatura REAL NOT NULL, Humedad INTEGER NOT NULL," \
        " Longitud REAL NOT NULL, Latitud REAL NOT NULL, Altura REAL NOT NULL, Velocidad REAL NOT NULL," \
        "Direccion REAL NOT NULL, Precipitacion REAL NOT NULL );";
@@ -41,7 +41,7 @@ bool DB_Local::AbrirDB(){
      }
 
     /* Create SQL statement */
-    sqlstr << "CREATE TABLE IF NOT EXISTS TBL_Datos_Max (id_dato INTEGER PRIMARY KEY NOT NULL ," \
+    sqlstr << "CREATE TABLE IF NOT EXISTS TBL_Datos_Max (" \
        "Fecha TEXT NOT NULL, Temperatura REAL NOT NULL, Humedad INTEGER NOT NULL," \
        " Longitud REAL NOT NULL, Latitud REAL NOT NULL, Altura REAL NOT NULL, Velocidad REAL NOT NULL," \
        "Direccion REAL NOT NULL, Precipitacion REAL NOT NULL );";
@@ -57,7 +57,7 @@ bool DB_Local::AbrirDB(){
     }
 
     /* Create SQL statement */
-    sqlstr << "CREATE TABLE IF NOT EXISTS TBL_Datos_Min (id_dato INTEGER PRIMARY KEY NOT NULL ," \
+    sqlstr << "CREATE TABLE IF NOT EXISTS TBL_Datos_Min (" \
        "Fecha TEXT NOT NULL, Temperatura REAL NOT NULL, Humedad INTEGER NOT NULL," \
        " Longitud REAL NOT NULL, Latitud REAL NOT NULL, Altura REAL NOT NULL, Velocidad REAL NOT NULL," \
        "Direccion REAL NOT NULL, Precipitacion REAL NOT NULL );";
@@ -73,7 +73,7 @@ bool DB_Local::AbrirDB(){
     }
 
     /* Create SQL statement */
-    sqlstr << "CREATE TABLE IF NOT EXISTS Historial (Ref INTEGER PRIMARY KEY NOT NULL ," \
+    sqlstr << "CREATE TABLE IF NOT EXISTS Historial (" \
        "Fecha TEXT NOT NULL, Usuario TEXT NOT NULL, Hora TEXT NOT NULL);";
 
     /* Execute SQL statement */
@@ -114,8 +114,8 @@ bool DB_Local::CerrarDB(){
 bool DB_Local::GuardarDatoProm(Dato a, string fecha){
    char *zErrMsg = nullptr;
    stringstream sql;
-   sql << "INSERT INTO TBL_Datos_Prom (id_dato, Fecha, Temperatura, Humedad, Longitud, Latitud, Altura, Velocidad, Direccion, Precipitacion) VALUES (";
-   sql << rand() << ", '" << fecha << "'," << a.temp << ", " << a.hum << ", " <<  a.lon << ", " << a.lat << ", " << a.alt;
+   sql << "INSERT INTO TBL_Datos_Prom (Fecha, Temperatura, Humedad, Longitud, Latitud, Altura, Velocidad, Direccion, Precipitacion) VALUES (";
+   sql <<"'"<< fecha << "'," << a.temp << ", " << a.hum << ", " <<  a.lon << ", " << a.lat << ", " << a.alt;
    sql << ", " << a.vel << ", " << a.dir << ", " << a.preci << ");";
 
    int rc = sqlite3_exec(_db, sql.str().c_str(), 0, 0, &zErrMsg);
@@ -133,8 +133,8 @@ bool DB_Local::GuardarDatoProm(Dato a, string fecha){
 bool DB_Local::GuardarDatoMax(Dato a, string fecha){
    char *zErrMsg = nullptr;
    stringstream sql;
-   sql << "INSERT INTO TBL_Datos_Max (id_dato, Fecha, Temperatura, Humedad, Longitud, Latitud, Altura, Velocidad, Direccion, Precipitacion) VALUES (";
-   sql << rand() << ", '" << fecha << "'," << a.temp << ", " << a.hum << ", " <<  a.lon << ", " << a.lat << ", " << a.alt;
+   sql << "INSERT INTO TBL_Datos_Max (Fecha, Temperatura, Humedad, Longitud, Latitud, Altura, Velocidad, Direccion, Precipitacion) VALUES (";
+   sql <<"'"<< fecha << "'," << a.temp << ", " << a.hum << ", " <<  a.lon << ", " << a.lat << ", " << a.alt;
    sql << ", " << a.vel << ", " << a.dir << ", " << a.preci << ");";
 
    int rc = sqlite3_exec(_db, sql.str().c_str(), 0, 0, &zErrMsg);
@@ -151,8 +151,8 @@ bool DB_Local::GuardarDatoMax(Dato a, string fecha){
 bool DB_Local::GuardarDatoMin(Dato a, string fecha){
    char *zErrMsg = nullptr;
    stringstream sql;
-   sql << "INSERT INTO TBL_Datos_Min (id_dato, Fecha, Temperatura, Humedad, Longitud, Latitud, Altura, Velocidad, Direccion, Precipitacion) VALUES (";
-   sql << rand() <<  ", '" << fecha << "'," << a.temp << ", " << a.hum << ", " <<  a.lon << ", " << a.lat << ", " << a.alt;
+   sql << "INSERT INTO TBL_Datos_Min (Fecha, Temperatura, Humedad, Longitud, Latitud, Altura, Velocidad, Direccion, Precipitacion) VALUES (";
+   sql <<"'"<< fecha << "'," << a.temp << ", " << a.hum << ", " <<  a.lon << ", " << a.lat << ", " << a.alt;
    sql << ", " << a.vel << ", " << a.dir << ", " << a.preci << ");";
 
    int rc = sqlite3_exec(_db, sql.str().c_str(), 0, 0, &zErrMsg);
@@ -172,8 +172,8 @@ bool DB_Local::GuardarHist(std::string us, int hora, int min, string fecha){
    string hr, mn;
    hr = to_string(hora);
    mn = to_string(min);
-   sql << "INSERT INTO historial (Ref, Fecha, Usuario, Hora) VALUES (";
-   sql << rand()-1 << ", '"<< fecha <<"', '" << us << "', '" << hr << ":" << mn << "');";// << ");";
+   sql << "INSERT INTO historial (Fecha, Usuario, Hora) VALUES (";
+   sql <<"'"<< fecha <<"', '" << us << "', '" << hr << ":" << mn << "');";// << ");";
 
    int rc = sqlite3_exec(_db, sql.str().c_str(), 0, 0, &zErrMsg);
 

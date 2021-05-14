@@ -8,6 +8,10 @@
 #include "base_local.h"
 
 using namespace std;
+/*!
+ * \brief The Alarma class Clase que controla los tiempos de toma y guardado de datos
+ * \authors Nicolas Castro & Juan Camilo Ospina
+ */
 
 class Alarma : public QObject{
     int                     _seg = 0, _min = 0, _hora = 0, _hr, _minu, _itera;
@@ -19,6 +23,10 @@ class Alarma : public QObject{
   Q_OBJECT
 
 public slots:
+    /*!
+     * \brief registro Funcion que toma la fecha actual y almacena el historial del usuario que inicio la aplicacion
+     * \param user0 Usuario que inicio la aplicacion
+     */
     void registro(string user0){
        ActualizarFechaFromSO();
        DB_Local BASE("DATA1.db");
@@ -26,7 +34,10 @@ public slots:
        BASE.GuardarHist(user0, _hr, _minu, _fecha);
        BASE.CerrarDB();
     }
-
+    /*!
+     * \brief llamado funcion que controla los tiempos y los llamados segun el timepo transcurrido
+     * \details cada 5 segundos llama a la funcion cada5Seg, cada minito a cadaMinutos y cada 24 horas actualiza la hora y la fecha
+     */
     void llamado(){
 //        std::cout << "Timer finalizado." << std::endl;
         ++_seg;
@@ -42,6 +53,9 @@ public slots:
                 }
             }
         }
+    /*!
+     * \brief ActualizarFechaFromSO Funcion que actualiza la fecha con Qt
+     */
     void ActualizarFechaFromSO(){
         time_t now = time(0);
         tm *ltm = localtime(&now);
@@ -52,6 +66,9 @@ public slots:
         fecha << ltm->tm_mday << "/" << ltm->tm_mon + 1  << "/" << ltm->tm_year + 1900;
         _fecha = fecha.str();
     }
+    /*!
+     * \brief cada5Seg Funcion que acumula los valores en promedio y calcula los nuevos maximos y minimos
+     */
     void cada5Seg(){
         _gps.actualizar();
         _max_gps = _max_gps.maximo(_gps, _max_gps);
@@ -78,7 +95,10 @@ public slots:
 
         std::cout << "5 Seg: " << std::endl;
     }
-
+    /*!
+     * \brief cadaMinuto Funcion que obtiene el promedio de cada sensor luego de los datos tomados y alamcena
+     *                    en la base de datos el promedio, maximo y minimo de cada sensor de cada clase
+     */
     void cadaMinuto(){
 
         int di = 12;
@@ -105,7 +125,6 @@ public slots:
         _datos.preci = _prom_preci.precipitacion();
 
         BASE.GuardarDatoProm( _datos, _fecha );
-        cout<< "hola"<< endl;
         _datos.lat = _max_gps.latitud();
         _datos.alt = _max_gps.altura();
         _datos.lon = _max_gps.longitud();
@@ -128,13 +147,6 @@ public slots:
 
         BASE.GuardarDatoMin( _datos, _fecha );
         BASE.CerrarDB();
-    /*     ui->txtLat->setText( QString::number( _prom_gps.latitud() ) );
-        ui->txtLong->setText( QString::number( _prom_gps.longitud() ) );
-        ui->txtAlt->setText( QString::number( _prom_gps.altura() ) );
-        ui->txtTemp->setText( QString::number( _prom_tem.temperatura() ) );
-        ui->txtHum->setText( QString::number( _prom_tem.humedad() ) );
-        ui->txtVel->setText( QString::number( _prom_viento.velocidad() ) );
-        ui->txtDir->setText( QString::number( _prom_viento.direccion()) ); */
 
 
 

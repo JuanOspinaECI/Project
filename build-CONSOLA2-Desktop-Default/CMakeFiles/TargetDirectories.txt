@@ -1,4 +1,0 @@
-/home/juancospina/PJ/Project/CONSOLA/build-CONSOLA2-Desktop-Default/CMakeFiles/rebuild_cache.dir
-/home/juancospina/PJ/Project/CONSOLA/build-CONSOLA2-Desktop-Default/CMakeFiles/CONSOLA2.dir
-/home/juancospina/PJ/Project/CONSOLA/build-CONSOLA2-Desktop-Default/CMakeFiles/edit_cache.dir
-/home/juancospina/PJ/Project/CONSOLA/build-CONSOLA2-Desktop-Default/CMakeFiles/CONSOLA2_autogen.dir

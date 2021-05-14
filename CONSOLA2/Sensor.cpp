@@ -52,12 +52,7 @@
             GPS_TEMP._dato[i] = _dato[i] + a._dato[i];
         return GPS_TEMP;
     }
-/* GPS const GPS&::operator=(const GPS &a){
-        for(int i =0 ; i < _tamano; i++)
-            this->_dato[i] = a._dato[i];
 
-        return *this;
-    }	 */
     GPS GPS::operator/(int &a){
         GPS GPS_TEMP;
         for(int i=0; i < _tamano; i++)

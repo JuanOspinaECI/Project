@@ -8,9 +8,13 @@
 using namespace std;
 
 int main(int argc, char** argv){
+    if (argc != 3){
+        cout << "no ha ingresado el usuario y el pass"<<endl;
+        return -1;
+    }
     string user1, pass1;
-    user1 = "jospina";//argv[1];
-    pass1 = "789123";//argv[2];
+    user1 = argv[1];
+    pass1 = argv[2];
     DB_Local BASE("DATA1.db");
     BASE.AbrirDB();
     cout << user1 << endl;
