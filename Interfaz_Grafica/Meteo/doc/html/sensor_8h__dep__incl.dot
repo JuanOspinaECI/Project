@@ -1,0 +1,24 @@
+digraph "/home/alse/Documents/PK/Interfaz_Grafica/Meteo/sensor.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node5 [label="/home/alse/Documents\l/PK/Interfaz_Grafica\l/Meteo/sensor.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="/home/alse/Documents\l/PK/Interfaz_Grafica\l/Meteo/Local.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_local_8h.html"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="/home/alse/Documents\l/PK/Interfaz_Grafica\l/Meteo/autenticacion.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$autenticacion_8cpp.html"];
+  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="/home/alse/Documents\l/PK/Interfaz_Grafica\l/Meteo/Local.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_local_8cpp.html"];
+  Node6 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="/home/alse/Documents\l/PK/Interfaz_Grafica\l/Meteo/mainwindow.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mainwindow_8cpp.html"];
+  Node6 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="/home/alse/Documents\l/PK/Interfaz_Grafica\l/Meteo/registrodialog.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$registrodialog_8cpp.html"];
+  Node5 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="/home/alse/Documents\l/PK/Interfaz_Grafica\l/Meteo/mainwindow.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$mainwindow_8h.html"];
+  Node11 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="/home/alse/Documents\l/PK/Interfaz_Grafica\l/Meteo/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html"];
+  Node11 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="/home/alse/Documents\l/PK/Interfaz_Grafica\l/Meteo/sensor.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sensor_8cpp.html"];
+}

@@ -9,20 +9,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ActualizarFechaFromSO();
-    //hide();
     ui->setupUi(this);
     _timer = new QTimer();
     _timer->setInterval( 100 );
     connect( _timer, SIGNAL( timeout() ), this,  SLOT( cadaSeg() ) );
     _timer->start();
     _seg = _min = _hora = _state= 0;
-    //hide();
     ui->txtest->setText( "Apagado" );
 }
 
 void MainWindow::cadaSeg(){
     ++_seg;
-    //hide();
     if( _seg % 5 == 0 ) cada5Seg();
     if(_seg == 60 ) {
         _seg = 0;
@@ -36,8 +33,7 @@ void MainWindow::cadaSeg(){
             ui->txtHum->setText( "" );
             ui->txtVel->setText( "" );
             ui->txtDir->setText( "" );
-            ui->txtpreci->setText( "" );//new line
-            //ui->txtest->setText("" );
+            ui->txtpreci->setText( "" );
             break;
         case 1:
             ui->txtLat->setText( "" );
@@ -81,8 +77,8 @@ void MainWindow::cadaSeg(){
             if(_hora == 24) _hora = 0;
         }
     }
-    //ui->lcdTiempo->display( _hora * 100 + _min + _seg / 100. );
 }
+
 
 void MainWindow::cada5Seg(){
     _timer->start();
@@ -107,7 +103,6 @@ void MainWindow::cada5Seg(){
 
 
 void MainWindow::minimo(){
-    //ui->txtest->setText( "Valores minimos" );
     string fech;
     std::stringstream date;
     Dato min;
@@ -166,8 +161,8 @@ void MainWindow::minimo(){
 
 }
 
+
 void MainWindow::maximo(){
-    //ui->txtest->setText( "Valores maximos" );
     Dato max;
     string fech;
     std::stringstream date;
@@ -226,7 +221,6 @@ void MainWindow::maximo(){
 }
 
 void MainWindow::promedio(){
-    //ui->txtest->setText( "Promedios" );
     Dato prom;
     string fech;
     std::stringstream date;
@@ -275,9 +269,6 @@ MainWindow::~MainWindow(){
     delete _timer;
 }
 
-
-
-
 void MainWindow::on_next_clicked()
 {
     _state++;
@@ -294,7 +285,6 @@ void MainWindow::on_next_clicked()
         ui->txtest->setText( "Valores maximos" );
     }
 }
-
 
 void MainWindow::on_prev_clicked()
 {
@@ -320,6 +310,5 @@ void MainWindow::on_prev_clicked()
 
 void MainWindow::on_exit_clicked()
 {
-    //hide();
     close();
 }
