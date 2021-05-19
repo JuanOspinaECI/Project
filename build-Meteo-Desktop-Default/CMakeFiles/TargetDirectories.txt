@@ -1,4 +1,0 @@
-/home/alse/Documents/PK/build-Meteo-Desktop-Default/CMakeFiles/rebuild_cache.dir
-/home/alse/Documents/PK/build-Meteo-Desktop-Default/CMakeFiles/Meteo.dir
-/home/alse/Documents/PK/build-Meteo-Desktop-Default/CMakeFiles/edit_cache.dir
-/home/alse/Documents/PK/build-Meteo-Desktop-Default/CMakeFiles/Meteo_autogen.dir
