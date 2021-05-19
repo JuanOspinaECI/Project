@@ -79,7 +79,8 @@ public:
      */
     double altura() {return leerDato(2);}
     /*!
-     * \brief actualizar Metodo que incluye valores negativos
+     * \brief actualizar Metodo que cambia el dato de acuerdo a los rangos de las medidas
+     * \details Rangos: Latitud(-180,180). Longitud(-180,180). Altura(0,4500)
      */
     void actualizar(){
         for(int i=0; i < _tamano; i++){
@@ -99,16 +100,17 @@ public:
     Temp_Hum():Sensor(2){}
     /*!
      * \brief temperatura
-     * \return
+     * \return Retorna valor de temperatura de tipo double
      */
     double temperatura() {return leerDato(0);}
     /*!
      * \brief humedad
-     * \return
+     * \return Retorna valor de humedad de tipo double
      */
     double humedad() { return leerDato(1);}
     /*!
-     * \brief actualizar
+     * \brief actualizar Metodo que cambia el dato de acuerdo a los rangos de las medidas
+     * \details Rangos: Temperatura(-10,45). Humedad(0,100)
      */
     void actualizar(){
     _dato[0] = ( rand() % 55 -10) ;
@@ -126,16 +128,17 @@ public:
     Viento():Sensor(2, 360){}
     /*!
      * \brief velocidad
-     * \return
+     * \return Retorna valor de velocidad del viento de tipo double
      */
     double velocidad() {return leerDato(0);}
     /*!
-     * \brief direccion
+     * \brief direccion Retorna valor de direccion del viento de tipo double
      * \return
      */
     double direccion() {return leerDato(1);}
     /*!
-     * \brief actualizar
+     * \brief actualizar Metodo que cambia el dato de acuerdo a los rangos de las medidas
+     * \details Rangos: Velocidad(0,40). Direccion(-180,180)
      */
     void actualizar(){
         _dato[0] = ( rand() % 40) ;
@@ -153,7 +156,7 @@ public:
     Precip():Sensor(1,50){}
     /*!
      * \brief precipitacion
-     * \return
+     * \return Retorna valor de precipitacion de tipo double
      */
     double precipitacion() {return leerDato(0);}
 };

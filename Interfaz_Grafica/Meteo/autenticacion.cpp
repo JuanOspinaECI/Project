@@ -19,12 +19,6 @@ autenticacion::~autenticacion()
     delete ui;
 }
 
-void autenticacion::on_salirr_clicked()
-{
-    close();
-}
-
-
 
 void autenticacion::on_Ingresar_clicked()
 {
@@ -32,21 +26,19 @@ void autenticacion::on_Ingresar_clicked()
     string passw;
     user = ui->usuario->text().toStdString();
     passw = ui->contras->text().toStdString();
-    DB_Local a("register.db");
-    a.AbrirDB();
-    //a.GuardarDato( ff );
-    if( a.ValidarPass(user, passw) ){
-        cout << "Ese password es correcto." << endl;
-        _acc = 1;
-        a.CerrarDB();
-        close();
+    if(user!=""){
+        DB_Local a("register.db");
+        a.AbrirDB();
+        if( a.ValidarPass(user, passw) ){
+            cout << "Ese password es correcto." << endl;
+            a.CerrarDB();
+            close();
 
-    }else{
-        cout << "Ese password es erróneo." << endl;
-        a.CerrarDB();
+        }else{
+            cout << "Ese password es erróneo." << endl;
+            a.CerrarDB();
+        }
     }
-
-
 }
 
 

@@ -16,14 +16,10 @@ class autenticacion : public QDialog
 
 public:
     explicit autenticacion(QWidget *parent = 0);
-    int _acc = 0;
+    //int _acc = 0;
     ~autenticacion();
 
 private slots:
-    /*!
-     * \brief on_salirr_clicked Metodo que termina la ejecucion de la clase autenticacion
-     */
-    void on_salirr_clicked();
     /*!
      * \brief on_Ingresar_clicked Metodo que valida la informacion suministrada por el usuario para aaccesar o no a la aplicacion
      */

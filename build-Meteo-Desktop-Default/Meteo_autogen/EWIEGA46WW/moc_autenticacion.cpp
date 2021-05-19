@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_autenticacion_t {
-    QByteArrayData data[7];
-    char stringdata0[104];
+    QByteArrayData data[6];
+    char stringdata0[86];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,17 +32,16 @@ struct qt_meta_stringdata_autenticacion_t {
 static const qt_meta_stringdata_autenticacion_t qt_meta_stringdata_autenticacion = {
     {
 QT_MOC_LITERAL(0, 0, 13), // "autenticacion"
-QT_MOC_LITERAL(1, 14, 17), // "on_salirr_clicked"
-QT_MOC_LITERAL(2, 32, 0), // ""
-QT_MOC_LITERAL(3, 33, 19), // "on_Ingresar_clicked"
-QT_MOC_LITERAL(4, 53, 22), // "on_Registrarse_clicked"
-QT_MOC_LITERAL(5, 76, 19), // "on_show_pas_toggled"
-QT_MOC_LITERAL(6, 96, 7) // "checked"
+QT_MOC_LITERAL(1, 14, 19), // "on_Ingresar_clicked"
+QT_MOC_LITERAL(2, 34, 0), // ""
+QT_MOC_LITERAL(3, 35, 22), // "on_Registrarse_clicked"
+QT_MOC_LITERAL(4, 58, 19), // "on_show_pas_toggled"
+QT_MOC_LITERAL(5, 78, 7) // "checked"
 
     },
-    "autenticacion\0on_salirr_clicked\0\0"
-    "on_Ingresar_clicked\0on_Registrarse_clicked\0"
-    "on_show_pas_toggled\0checked"
+    "autenticacion\0on_Ingresar_clicked\0\0"
+    "on_Registrarse_clicked\0on_show_pas_toggled\0"
+    "checked"
 };
 #undef QT_MOC_LITERAL
 
@@ -52,7 +51,7 @@ static const uint qt_meta_data_autenticacion[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       3,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -60,16 +59,14 @@ static const uint qt_meta_data_autenticacion[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   34,    2, 0x08 /* Private */,
-       3,    0,   35,    2, 0x08 /* Private */,
-       4,    0,   36,    2, 0x08 /* Private */,
-       5,    1,   37,    2, 0x08 /* Private */,
+       1,    0,   29,    2, 0x08 /* Private */,
+       3,    0,   30,    2, 0x08 /* Private */,
+       4,    1,   31,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::Bool,    6,
+    QMetaType::Void, QMetaType::Bool,    5,
 
        0        // eod
 };
@@ -80,10 +77,9 @@ void autenticacion::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         autenticacion *_t = static_cast<autenticacion *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->on_salirr_clicked(); break;
-        case 1: _t->on_Ingresar_clicked(); break;
-        case 2: _t->on_Registrarse_clicked(); break;
-        case 3: _t->on_show_pas_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        case 0: _t->on_Ingresar_clicked(); break;
+        case 1: _t->on_Registrarse_clicked(); break;
+        case 2: _t->on_show_pas_toggled((*reinterpret_cast< bool(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -114,13 +110,13 @@ int autenticacion::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 4)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 4;
+        _id -= 3;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 4)
+        if (_id < 3)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 4;
+        _id -= 3;
     }
     return _id;
 }

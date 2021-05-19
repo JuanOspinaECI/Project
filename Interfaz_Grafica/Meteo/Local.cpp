@@ -26,8 +26,7 @@ bool DB_Local::AbrirDB(){
 
     // Validar que todas las tablas existan correctamente
     /* Create SQL statement */
-    sqlstr << "CREATE TABLE IF NOT EXISTS TBL_Datos_Prom (id_dato INTEGER PRIMARY KEY NOT NULL ," \
-       "Fecha TEXT NOT NULL, Temperatura REAL NOT NULL, Humedad INTEGER NOT NULL," \
+    sqlstr << "CREATE TABLE IF NOT EXISTS TBL_Datos_Prom (Fecha TEXT NOT NULL, Temperatura REAL NOT NULL, Humedad INTEGER NOT NULL," \
        " Longitud REAL NOT NULL, Latitud REAL NOT NULL, Altura REAL NOT NULL, Velocidad REAL NOT NULL," \
        "Direccion REAL NOT NULL, Precipitacion REAL NOT NULL );";
 
@@ -41,8 +40,7 @@ bool DB_Local::AbrirDB(){
      }
 
     /* Create SQL statement */
-    sqlstr << "CREATE TABLE IF NOT EXISTS TBL_Datos_Max (id_dato INTEGER PRIMARY KEY NOT NULL ," \
-       "Fecha TEXT NOT NULL, Temperatura REAL NOT NULL, Humedad INTEGER NOT NULL," \
+    sqlstr << "CREATE TABLE IF NOT EXISTS TBL_Datos_Max (Fecha TEXT NOT NULL, Temperatura REAL NOT NULL, Humedad INTEGER NOT NULL," \
        " Longitud REAL NOT NULL, Latitud REAL NOT NULL, Altura REAL NOT NULL, Velocidad REAL NOT NULL," \
        "Direccion REAL NOT NULL, Precipitacion REAL NOT NULL );";
 
@@ -57,8 +55,7 @@ bool DB_Local::AbrirDB(){
     }
 
     /* Create SQL statement */
-    sqlstr << "CREATE TABLE IF NOT EXISTS TBL_Datos_Min (id_dato INTEGER PRIMARY KEY NOT NULL ," \
-       "Fecha TEXT NOT NULL, Temperatura REAL NOT NULL, Humedad INTEGER NOT NULL," \
+    sqlstr << "CREATE TABLE IF NOT EXISTS TBL_Datos_Min (Fecha TEXT NOT NULL, Temperatura REAL NOT NULL, Humedad INTEGER NOT NULL," \
        " Longitud REAL NOT NULL, Latitud REAL NOT NULL, Altura REAL NOT NULL, Velocidad REAL NOT NULL," \
        "Direccion REAL NOT NULL, Precipitacion REAL NOT NULL );";
 
@@ -73,8 +70,7 @@ bool DB_Local::AbrirDB(){
     }
 
     /* Create SQL statement */
-    sqlstr << "CREATE TABLE IF NOT EXISTS TBL_Usuario (id_dato INTEGER PRIMARY KEY NOT NULL ,"\
-       "Nombre TEXT NOT NULL, Apellido TEXT NOT NULL," \
+    sqlstr << "CREATE TABLE IF NOT EXISTS TBL_Usuario (Nombre TEXT NOT NULL, Apellido TEXT NOT NULL," \
        "Documento TEXT NOT NULL, Fecha_nacimiento TEXT NOT NULL, Edad INTEGER NOT NULL, "\
        "user_name TEXT NOT NULL, passwd TEXT NOT NULL);";
 
@@ -101,8 +97,8 @@ bool DB_Local::CerrarDB(){
 bool DB_Local::GuardarDatoProm(Dato a, string fecha){
    char *zErrMsg = nullptr;
    stringstream sql;
-   sql << "INSERT INTO TBL_Datos_Prom (id_dato, Fecha, Temperatura, Humedad, Longitud, Latitud, Altura, Velocidad, Direccion, Precipitacion) VALUES (";
-   sql << rand() << " ,'"<< fecha << "', "<< a.Temp << ", " << a.Hum << ", " <<  a.Lon << ", " << a.Lat << ", " << a.Alt;
+   sql << "INSERT INTO TBL_Datos_Prom (Fecha, Temperatura, Humedad, Longitud, Latitud, Altura, Velocidad, Direccion, Precipitacion) VALUES (";
+   sql << "'" << fecha << "' ,"<< a.Temp << ", " << a.Hum << ", " <<  a.Lon << ", " << a.Lat << ", " << a.Alt;
    sql << ", " << a.VelV << ", " << a.DirV << ", " << a.Prec << ");";
 
    int rc = sqlite3_exec(_db, sql.str().c_str(), 0, 0, &zErrMsg);
@@ -120,8 +116,8 @@ bool DB_Local::GuardarDatoProm(Dato a, string fecha){
 bool DB_Local::GuardarDatoMax(Dato a, string fecha){
    char *zErrMsg = nullptr;
    stringstream sql;
-   sql << "INSERT INTO TBL_Datos_Max (id_dato, Fecha, Temperatura, Humedad, Longitud, Latitud, Altura, Velocidad, Direccion, Precipitacion) VALUES (";
-   sql << rand() << " ,'"<< fecha << "', " << a.Temp << ", " << a.Hum << ", " <<  a.Lon << ", " << a.Lat << ", " << a.Alt;
+   sql << "INSERT INTO TBL_Datos_Max (Fecha, Temperatura, Humedad, Longitud, Latitud, Altura, Velocidad, Direccion, Precipitacion) VALUES (";
+   sql << "'" << fecha << "' ," << a.Temp << ", " << a.Hum << ", " <<  a.Lon << ", " << a.Lat << ", " << a.Alt;
    sql << ", " << a.VelV << ", " << a.DirV << ", " << a.Prec << ");";
 
    int rc = sqlite3_exec(_db, sql.str().c_str(), 0, 0, &zErrMsg);
@@ -138,8 +134,8 @@ bool DB_Local::GuardarDatoMax(Dato a, string fecha){
 bool DB_Local::GuardarDatoMin(Dato a, string fecha){
    char *zErrMsg = nullptr;
    stringstream sql;
-   sql << "INSERT INTO TBL_Datos_Min (id_dato, Fecha, Temperatura, Humedad, Longitud, Latitud, Altura, Velocidad, Direccion, Precipitacion) VALUES (";
-   sql << rand() << " ,'"<< fecha << "', " << a.Temp << ", " << a.Hum << ", " <<  a.Lon << ", " << a.Lat << ", " << a.Alt;
+   sql << "INSERT INTO TBL_Datos_Min (Fecha, Temperatura, Humedad, Longitud, Latitud, Altura, Velocidad, Direccion, Precipitacion) VALUES (";
+   sql << "'" << fecha << "' ," << a.Temp << ", " << a.Hum << ", " <<  a.Lon << ", " << a.Lat << ", " << a.Alt;
    sql << ", " << a.VelV << ", " << a.DirV << ", " << a.Prec << ");";
 
    int rc = sqlite3_exec(_db, sql.str().c_str(), 0, 0, &zErrMsg);
@@ -186,8 +182,8 @@ bool DB_Local::ValidarPass(std::string username, std::string passwd){
 bool DB_Local::GuardarUser(std::string us, string nom, string ape, string doc, string fecha , string pass, int Edad){
    char *zErrMsg = nullptr;
    stringstream sql;
-   sql << "INSERT INTO TBL_Usuario(id_dato, Nombre, Apellido, Documento, Fecha_nacimiento, Edad, user_name , passwd) VALUES (";
-   sql << rand() << " , '" << nom <<"', '" << ape << "', '" << doc << "', '" << fecha << "', " << Edad <<", '"<< us << "', '" << pass << "');";// << ");";
+   sql << "INSERT INTO TBL_Usuario(Nombre, Apellido, Documento, Fecha_nacimiento, Edad, user_name , passwd) VALUES (";
+   sql << "'" << nom <<"', '" << ape << "', '" << doc << "', '" << fecha << "', " << Edad <<", '"<< us << "', '" << pass << "');";// << ");";
 
    int rc = sqlite3_exec(_db, sql.str().c_str(), 0, 0, &zErrMsg);
 

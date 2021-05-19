@@ -23,6 +23,7 @@ void MainWindow::cadaSeg(){
     if( _seg % 5 == 0 ) cada5Seg();
     if(_seg == 60 ) {
         _seg = 0;
+        std::cout << "1 Min: " << std::endl;
         switch( _state)
         {
         case 0:
@@ -98,7 +99,7 @@ void MainWindow::cada5Seg(){
     a.Prec = _preci.precipitacion();
 
     _vDatos.push_back( a );
-    std::cout << "5 Seg: " << std::endl;
+
 }
 
 
@@ -274,15 +275,19 @@ void MainWindow::on_next_clicked()
     _state++;
     if(_state == 4){
         _state = 1;
+        _seg = 0;
     }
     if(_state == 1){
         ui->txtest->setText( "Promedios" );
+        _seg = 0;
     }
     else if(_state == 2){
         ui->txtest->setText( "Valores minimos" );
+        _seg = 0;
     }
     else{
         ui->txtest->setText( "Valores maximos" );
+        _seg = 0;
     }
 }
 
@@ -296,12 +301,15 @@ void MainWindow::on_prev_clicked()
 
     if(_state == 1){
         ui->txtest->setText( "Promedios" );
+        _seg = 0;
     }
     else if(_state == 2){
         ui->txtest->setText( "Valores minimos" );
+        _seg = 0;
     }
     else if(_state == 3){
         ui->txtest->setText( "Valores maximos" );
+        _seg = 0;
     }
     else if(_state == 0){
         ui->txtest->setText( "Apagado" );

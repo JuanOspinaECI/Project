@@ -135,7 +135,7 @@ public:
     {
         autenticacion->setWindowTitle(QApplication::translate("autenticacion", "Form", Q_NULLPTR));
         groupBox->setTitle(QString());
-        label->setText(QApplication::translate("autenticacion", "ESTACION METEREOLIGA", Q_NULLPTR));
+        label->setText(QApplication::translate("autenticacion", "ESTACION METEREOLOGICA", Q_NULLPTR));
         label_2->setText(QApplication::translate("autenticacion", "User:", Q_NULLPTR));
         label_3->setText(QApplication::translate("autenticacion", "Password:", Q_NULLPTR));
         show_pas->setText(QApplication::translate("autenticacion", "show password", Q_NULLPTR));

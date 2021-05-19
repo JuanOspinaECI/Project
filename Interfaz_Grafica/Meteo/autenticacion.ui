@@ -56,7 +56,7 @@
        <item>
         <widget class="QLabel" name="label">
          <property name="text">
-          <string>ESTACION METEREOLIGA</string>
+          <string>ESTACION METEREOLOGICA</string>
          </property>
         </widget>
        </item>

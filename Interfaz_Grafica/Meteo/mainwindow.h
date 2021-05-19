@@ -37,43 +37,39 @@ public slots:
 
 private:
     /*!
-     * \brief cada5Seg Funcion que guarda los datos y actualiza los sensores cada 5 segundos
+     * \brief cada5Seg Metodo que guarda los datos y actualiza los sensores cada 5 segundos
      */
     void cada5Seg();
     /*!
-     * \brief cadaMinuto
-     */
-    void cadaMinuto();
-    /*!
-     * \brief promedio Funcion que calcula el promedio de los datos tomados de los sensores durante 1 minuto, guarda los datos en la base local y los muestra en pantalla
+     * \brief promedio Metodo que calcula el promedio de los datos tomados de los sensores durante 1 minuto, guarda los datos en la base local y los muestra en pantalla
      */
     void promedio();
     /*!
-     * \brief maximo Funcion que calcula el valor maximo de los datos tomados de los sensores durante 1 minuto, guarda los datos en la base local y los muestra en pantalla
+     * \brief maximo Metodo que calcula el valor maximo de los datos tomados de los sensores durante 1 minuto, guarda los datos en la base local y los muestra en pantalla
      */
     void maximo();
     /*!
-     * \brief minimo Funcion que calcula el valor minimo de los datos tomados de los sensores durante 1 minuto, guarda los datos en la base local y los muestra en pantalla
+     * \brief minimo Metodo que calcula el valor minimo de los datos tomados de los sensores durante 1 minuto, guarda los datos en la base local y los muestra en pantalla
      */
     void minimo();
 
 private slots:
     /*!
-     * \brief cadaSeg Funcion que cuenta el tiempo trascurrido y controla la maquina de estados
+     * \brief cadaSeg Metodo que cuenta el tiempo trascurrido y controla la maquina de estados
      */
     void cadaSeg();
     /*!
-     * \brief on_next_clicked Funcion que perimte cambiar de un estado al siguiente al presionar el boton next
+     * \brief on_next_clicked Metodo que perimte cambiar de un estado al siguiente al presionar el boton next
      * \details Apagado->Promedio->Minimo->Maximo->Promedio
      */
     void on_next_clicked();
     /*!
-     * \brief on_prev_clicked Funcion que perimte cambiar de un estado al anterior al presionar el boton previous
+     * \brief on_prev_clicked Metodo que perimte cambiar de un estado al anterior al presionar el boton previous
      * \details Maximo->Minimo->Promedio->Apagado->Apagado
      */
     void on_prev_clicked();
     /*!
-     * \brief on_exit_clicked Funcion que permite terminar la ejecucion de la aplicacion al presionar el boton exit
+     * \brief on_exit_clicked Metodo que permite terminar la ejecucion de la aplicacion al presionar el boton exit
      */
     void on_exit_clicked();
 

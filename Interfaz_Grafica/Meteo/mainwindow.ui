@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>744</width>
-    <height>484</height>
+    <height>573</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -428,13 +428,6 @@
          </layout>
         </item>
        </layout>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton">
-        <property name="text">
-         <string>Connect to DB</string>
-        </property>
-       </widget>
       </item>
      </layout>
     </item>

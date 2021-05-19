@@ -102,7 +102,6 @@ public:
     QHBoxLayout *horizontalLayout_13;
     QPushButton *prev;
     QPushButton *next;
-    QPushButton *pushButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -111,7 +110,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(744, 484);
+        MainWindow->resize(744, 573);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         gridLayout_4 = new QGridLayout(centralWidget);
@@ -455,11 +454,6 @@ public:
 
         verticalLayout_6->addLayout(verticalLayout_5);
 
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-
-        verticalLayout_6->addWidget(pushButton);
-
 
         gridLayout_4->addLayout(verticalLayout_6, 3, 0, 1, 1);
 
@@ -508,7 +502,6 @@ public:
         label_9->setText(QApplication::translate("MainWindow", "Cambiar informacion", Q_NULLPTR));
         prev->setText(QApplication::translate("MainWindow", "previous", Q_NULLPTR));
         next->setText(QApplication::translate("MainWindow", "next", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("MainWindow", "Connect to DB", Q_NULLPTR));
     } // retranslateUi
 
 };
